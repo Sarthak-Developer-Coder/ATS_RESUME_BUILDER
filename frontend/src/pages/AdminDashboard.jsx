@@ -52,14 +52,14 @@ import {
   Delete,
   Visibility,
   Search,
-  FilterList,
+  // FilterList,
   AdminPanelSettings,
   Logout,
   Settings,
-  Analytics,
+  // Analytics,
   Warning,
   CheckCircle,
-  Cancel,
+  // Cancel,
   Star,
   BugReport,
   Lightbulb,
@@ -67,7 +67,7 @@ import {
   MoreVert,
   Refresh,
   Download,
-  Upload,
+  // Upload,
   NotificationsActive,
   Security,
   Speed,
@@ -76,29 +76,26 @@ import {
   TrendingDown,
   PersonAdd,
   FilePresent,
-  RateReview,
-  CalendarToday,
-  Schedule,
-  Group,
-  Assignment,
-  BarChart,
+  // RateReview,
+  // CalendarToday,
+  // Schedule,
+  // Group,
+  // Assignment,
+  // BarChart,
   PieChart,
   ShowChart,
-  DataUsage,
-  Insights,
-  AutoGraph,
-  MonetizationOn,
-  WorkspacePremium,
-  EmojiEvents,
-  Person,
-  LocalFireDepartment
+  // DataUsage,
+  // Insights,
+  // AutoGraph,
+  // MonetizationOn,
+  Person
 } from '@mui/icons-material';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { api_url } from '../helper/Helper';
 import {
-  LineChart,
+  // LineChart,
   Line,
   AreaChart,
   Area,
@@ -113,8 +110,6 @@ import {
   Tooltip as RechartsTooltip,
   Legend,
   ResponsiveContainer,
-  RadialBarChart,
-  RadialBar,
   ComposedChart
 } from 'recharts';
 import CountUp from 'react-countup';
@@ -141,7 +136,7 @@ const colors = {
   amber: '#d97706'
 };
 
-const chartColors = [colors.primary, colors.success, colors.warning, colors.error, colors.purple, colors.pink];
+// const chartColors = [colors.primary, colors.success, colors.warning, colors.error, colors.purple, colors.pink];
 
 function AdminDashboard() {
   const theme = useTheme();
@@ -161,13 +156,13 @@ function AdminDashboard() {
   const [pagination, setPagination] = useState({});
   const [snackbar, setSnackbar] = useState({ open: false, message: '', severity: 'success' });
   const [adminMenuAnchor, setAdminMenuAnchor] = useState(null);
-  const [darkMode, setDarkMode] = useState(false);
+  // const [darkMode, setDarkMode] = useState(false);
   const [realTimeData, setRealTimeData] = useState(true);
   
   const navigate = useNavigate();
 
   // Mock data for enhanced charts
-  const [chartData, setChartData] = useState({
+  const [chartData] = useState({
     userGrowth: [
       { month: 'Jan', users: 120, resumes: 89, active: 95 },
       { month: 'Feb', users: 180, resumes: 145, active: 142 },
@@ -213,6 +208,7 @@ function AdminDashboard() {
     axios.defaults.headers.common['Authorization'] = `Bearer ${adminToken}`;
     loadDashboardStats();
     loadUsers();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [navigate]);
 
   const loadDashboardStats = async () => {

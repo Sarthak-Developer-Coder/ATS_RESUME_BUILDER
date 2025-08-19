@@ -10,7 +10,6 @@ import {
   Paper
 } from '@mui/material';
 import {
-  Person,
   Work,
   School,
   Star,

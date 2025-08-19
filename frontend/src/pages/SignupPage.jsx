@@ -17,7 +17,7 @@ import {
 } from '@mui/material';
 import { Rocket } from '@mui/icons-material';
 
-import { Google, Visibility, VisibilityOff, Email, Lock, Person } from '@mui/icons-material';
+import { Google, Visibility, VisibilityOff, Email, Lock } from '@mui/icons-material';
 import { motion } from 'framer-motion';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';

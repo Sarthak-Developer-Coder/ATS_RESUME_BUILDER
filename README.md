@@ -273,19 +273,19 @@ Place your images in `docs/screenshots/` with the names below (or adjust paths i
 
 | Login | Profile | Dashboard |
 |---|---|---|
-| ![Login](docs/screenshots/login.png) | ![Profile](docs/screenshots/profile.png) | ![Dashboard](docs/screenshots/dashboard.png) |
+| ![Login](docs/screenshots/login.svg) | ![Profile](docs/screenshots/profile.svg) | ![Dashboard](docs/screenshots/dashboard.svg) |
 
 | Upload Resume | ATS Score – Input | ATS Score – Results |
 |---|---|---|
-| ![Upload](docs/screenshots/upload.png) | ![JD Input](docs/screenshots/score-input.png) | ![Results](docs/screenshots/score-results.png) |
+| ![Upload](docs/screenshots/upload.svg) | ![JD Input](docs/screenshots/score-input.svg) | ![Results](docs/screenshots/score-results.svg) |
 
 | AI Recommendations & Keywords | Template Select | Summary (AI) |
 |---|---|---|
-| ![Recs](docs/screenshots/recommendations.png) | ![Templates](docs/screenshots/templates.png) | ![Summary](docs/screenshots/summary.png) |
+| ![Recs](docs/screenshots/recommendations.svg) | ![Templates](docs/screenshots/templates.svg) | ![Summary](docs/screenshots/summary.svg) |
 
 | Resume Preview | Feedback |
 |---|---|
-| ![Preview](docs/screenshots/preview.png) | ![Feedback](docs/screenshots/feedback.png) |
+| ![Preview](docs/screenshots/preview.svg) | ![Feedback](docs/screenshots/feedback.svg) |
 
 ---
 

@@ -1,0 +1,26 @@
+node_modules/
+.env
+
+# Env files in subfolders
+backend/.env
+frontend/.env
+**/.env.local
+**/.env.*.local
+
+# Firebase service account (do NOT commit)
+backend/service-account.json
+backend/service-account*.json
+
+# Build outputs
+frontend/build/
+backend/dist/
+
+# Logs
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/Editor
+.DS_Store
+.vscode/

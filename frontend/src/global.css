@@ -1,0 +1,18 @@
+/* Print optimization */
+@media print {
+  body, html, #root { background: white !important; }
+  .MuiAppBar-root, .MuiToolbar-root, .MuiButton-root, .MuiDialog-root, .MuiSnackbar-root { display: none !important; }
+  .resume-sheet {
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    width: 210mm !important;
+    min-height: 297mm !important;
+    margin: 0 !important;
+  }
+}
+/* src/global.css */
+.scaled-container {
+  transform: scale(0.9);
+  transform-origin: top center;
+  width: 111.11%; /* (1 / 0.9) * 100% to prevent layout shrinking */
+}

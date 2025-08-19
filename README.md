@@ -273,19 +273,19 @@ Place your images in `docs/screenshots/` with the names below (or adjust paths i
 
 | Login | Profile | Dashboard |
 |---|---|---|
-| ![Login](docs/screenshots/login.svg) | ![Profile](docs/screenshots/profile.svg) | ![Dashboard](docs/screenshots/dashboard.svg) |
+| ![Login](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/login.svg) | ![Profile](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/profile.svg) | ![Dashboard](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/dashboard.svg) |
 
 | Upload Resume | ATS Score – Input | ATS Score – Results |
 |---|---|---|
-| ![Upload](docs/screenshots/upload.svg) | ![JD Input](docs/screenshots/score-input.svg) | ![Results](docs/screenshots/score-results.svg) |
+| ![Upload](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/upload.svg) | ![JD Input](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/score-input.svg) | ![Results](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/score-results.svg) |
 
 | AI Recommendations & Keywords | Template Select | Summary (AI) |
 |---|---|---|
-| ![Recs](docs/screenshots/recommendations.svg) | ![Templates](docs/screenshots/templates.svg) | ![Summary](docs/screenshots/summary.svg) |
+| ![Recommendations](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/recommendations.svg) | ![Templates](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/templates.svg) | ![Summary](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/summary.svg) |
 
 | Resume Preview | Feedback |
 |---|---|
-| ![Preview](docs/screenshots/preview.svg) | ![Feedback](docs/screenshots/feedback.svg) |
+| ![Preview](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/preview.svg) | ![Feedback](https://raw.githubusercontent.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER/main/docs/screenshots/feedback.svg) |
 
 ---
 

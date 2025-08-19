@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Divider, Chip } from '@mui/material';
+import { Box, Typography, Divider } from '@mui/material';
 
 function ModernProfessionalTemplate({ resumeData }) {
   const formatDate = (dateString) => {

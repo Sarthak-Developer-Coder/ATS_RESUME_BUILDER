@@ -17,10 +17,10 @@ function PersonalDetailsForm({ data, onChange }) {
     website: ''
   });
 
-  // Initialize formData only once when component mounts or when data prop changes significantly
+  // Initialize/refresh formData when `data` changes
   useEffect(() => {
     if (data && Object.keys(data).length > 0) {
-      setFormData(prev => ({
+      setFormData({
         fullName: data.fullName || '',
         email: data.email || '',
         phone: data.phone || '',
@@ -28,9 +28,9 @@ function PersonalDetailsForm({ data, onChange }) {
         linkedin: data.linkedin || '',
         github: data.github || '',
         website: data.website || ''
-      }));
+      });
     }
-  }, []); // Remove data dependency to prevent unnecessary updates
+  }, [data]);
 
   const handleChange = (field) => (event) => {
     const newValue = event.target.value;

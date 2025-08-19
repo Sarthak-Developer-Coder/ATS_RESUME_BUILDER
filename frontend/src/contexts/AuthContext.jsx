@@ -47,6 +47,11 @@ export function AuthProvider({ children }) {
 
   useEffect(() => {
     if (authMode === 'firebase') {
+      if (!auth) {
+        console.warn('Firebase auth mode selected but Firebase is not initialized');
+        setLoading(false);
+        return;
+      }
       const unsubscribe = onAuthStateChanged(auth, async (firebaseUser) => {
         if (firebaseUser) {
           try {

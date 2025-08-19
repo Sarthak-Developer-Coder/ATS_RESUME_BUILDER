@@ -209,6 +209,11 @@ app.use((req, res, next) => {
   next();
 });
 
+// Avoid noisy 404 for favicon in root
+app.get('/favicon.ico', (req, res) => {
+  res.status(204).end();
+});
+
 // Routes - Make sure these are mounted correctly
 app.use('/api', authRoutes);
 app.use('/api', resumeRoutes);
@@ -252,6 +257,7 @@ app.get('/deploy/init-admin', async (req, res) => {
 app.get('/api/health', async (req, res) => {
   try {
     const mongoStatus = await testConnection();
+  const firebaseStatus = process.env.FIREBASE_PROJECT_ID && process.env.FIREBASE_CLIENT_EMAIL && process.env.FIREBASE_PRIVATE_KEY ? 'Initialized' : 'Not Configured';
     
     // Check if admin exists
   const adminEmail = process.env.ADMIN_EMAIL || 'admin@resumebuilder.com';
@@ -264,7 +270,7 @@ app.get('/api/health', async (req, res) => {
       environment: process.env.NODE_ENV || 'development',
       services: {
         mongodb: mongoStatus ? 'Connected' : 'Disconnected',
-        firebase: 'Initialized',
+        firebase: firebaseStatus,
         ai: 'Available',
   admin: adminExists ? `Admin User Created (${adminEmail})` : `Admin User Missing (${adminEmail})`,
         email: process.env.EMAIL_USER && process.env.EMAIL_PASS ? 'Configured' : 'Not Configured'

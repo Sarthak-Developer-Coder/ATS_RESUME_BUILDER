@@ -5,8 +5,21 @@ dotenv.config();
 
 let firebaseInitialized = false;
 
+const hasFirebaseEnv = () =>
+  Boolean(
+    process.env.FIREBASE_PROJECT_ID &&
+      process.env.FIREBASE_CLIENT_EMAIL &&
+      process.env.FIREBASE_PRIVATE_KEY
+  );
+
 const initializeFirebase = () => {
   try {
+    if (!hasFirebaseEnv()) {
+      console.log('ℹ️ Firebase Admin not configured (missing env vars). Skipping initialization.');
+      firebaseInitialized = false;
+      return;
+    }
+
     if (!admin.apps.length) {
       admin.initializeApp({
         credential: admin.credential.cert({
@@ -16,7 +29,7 @@ const initializeFirebase = () => {
         }),
       });
       firebaseInitialized = true;
-      // console.log('✅ Firebase Admin initialized from .env');
+      console.log('✅ Firebase Admin initialized from environment variables');
     }
   } catch (error) {
     console.error('❌ Firebase Admin initialization failed:', error.message);

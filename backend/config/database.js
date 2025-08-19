@@ -12,12 +12,11 @@ const connectDB = async () => {
     console.log('🔄 Attempting to connect to MongoDB...');
     
     const conn = await mongoose.connect(mongoURI, {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-      serverSelectionTimeoutMS: 10000, 
+      // Deprecated options removed for Mongoose 6+/MongoDB Node 4+
+      serverSelectionTimeoutMS: 10000,
       socketTimeoutMS: 45000,
-      maxPoolSize: 10, 
-      heartbeatFrequencyMS: 10000, 
+      maxPoolSize: 10,
+      heartbeatFrequencyMS: 10000,
     });
 
     console.log(`✅ MongoDB Connected: ${conn.connection.host}`);

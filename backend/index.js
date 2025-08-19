@@ -90,6 +90,11 @@ setTimeout(async () => {
 const getAllowedOrigins = () => {
   const prodOrigins = [process.env.FRONTEND_URL].filter(Boolean);
 
+  const extra = (process.env.EXTRA_CORS_ORIGINS || '')
+    .split(',')
+    .map(s => s.trim())
+    .filter(Boolean);
+
   const devOrigins = [
     'http://localhost:3000',
     'http://localhost:3001',
@@ -98,7 +103,7 @@ const getAllowedOrigins = () => {
   ];
 
   // Merge and de-duplicate
-  return Array.from(new Set([...devOrigins, ...prodOrigins]));
+  return Array.from(new Set([...devOrigins, ...prodOrigins, ...extra]));
 };
 
 // CORS Configuration - Simplified and more reliable
@@ -115,7 +120,8 @@ const corsOptions = {
     const allowedOrigins = getAllowedOrigins();
     console.log('📋 Allowed origins:', allowedOrigins);
     
-    if (allowedOrigins.includes(origin) || /^http:\/\/(localhost|127\.0\.0\.1)/.test(origin)) {
+  const allowPreview = process.env.ALLOW_VERCEL_PREVIEWS === 'true' && /^https?:\/\/[a-z0-9-]+\.vercel\.app$/.test(origin);
+  if (allowedOrigins.includes(origin) || /^http:\/\/(localhost|127\.0\.0\.1)/.test(origin) || allowPreview) {
       console.log(`✅ Origin ${origin} is allowed`);
       callback(null, true);
     } else {
@@ -436,15 +442,17 @@ app.use('*', (req, res) => {
 const gracefulShutdown = (signal) => {
   console.log(`🔄 ${signal} received, shutting down gracefully...`);
   
-  server.close(() => {
+  server.close(async () => {
     console.log('🔄 HTTP server closed');
     
-    if (mongoose.connection.readyState === 1) {
-      mongoose.connection.close(() => {
+    try {
+      if (mongoose.connection.readyState === 1) {
+        await mongoose.connection.close();
         console.log('🔄 MongoDB connection closed');
-        process.exit(0);
-      });
-    } else {
+      }
+    } catch (e) {
+      console.error('⚠️ Error closing MongoDB connection:', e.message);
+    } finally {
       process.exit(0);
     }
   });

@@ -53,7 +53,14 @@ export const authenticateToken = async (req, res, next) => {
       }
     } else if (process.env.NODE_ENV === 'production') {
       console.log('❌ Firebase Admin not initialized.');
-      return res.status(500).json({ error: 'Firebase is not properly configured' });
+      // Optional emergency escape hatch: allow insecure decode in production
+      // Set ALLOW_INSECURE_FIREBASE_DECODE=true (Render env) to temporarily
+      // bypass hard failure while you finish configuring Firebase Admin.
+      if (process.env.ALLOW_INSECURE_FIREBASE_DECODE === 'true') {
+        console.log('⚠️ ALLOW_INSECURE_FIREBASE_DECODE enabled — falling back to unverified decode');
+      } else {
+        return res.status(500).json({ error: 'Firebase is not properly configured' });
+      }
     }
 
     // Dev fallback: decode JWT without verification to extract uid/email

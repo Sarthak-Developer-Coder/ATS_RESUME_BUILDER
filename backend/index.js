@@ -88,11 +88,7 @@ setTimeout(async () => {
 
 // Define allowed origins (always include localhost for dev convenience)
 const getAllowedOrigins = () => {
-  const prodOrigins = [
-    'https://sd-resume-builder.vercel.app',
-    'https://ats-resume-builder-1.onrender.com',
-    process.env.FRONTEND_URL
-  ].filter(Boolean);
+  const prodOrigins = [process.env.FRONTEND_URL].filter(Boolean);
 
   const devOrigins = [
     'http://localhost:3000',
@@ -168,6 +164,7 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Credentials', 'true');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS,PATCH');
   res.header('Access-Control-Allow-Headers', 'Origin,X-Requested-With,Content-Type,Accept,Authorization,Cache-Control,Pragma,Expires,X-Access-Token');
+  res.header('Vary', 'Origin');
   res.header('Access-Control-Max-Age', '86400'); // 24 hours
   
   // Handle preflight OPTIONS requests immediately

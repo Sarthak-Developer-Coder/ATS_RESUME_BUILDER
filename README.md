@@ -20,8 +20,8 @@ Clone and run locally in minutes.
 
 ```bash
 # 1) Clone
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER.git
+cd ATS_RESUME_BUILDER
 
 # 2) Backend
 cd backend
@@ -127,8 +127,8 @@ ats-resume-builder/
 ### 1️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
-cd YOUR_REPO_NAME
+git clone https://github.com/Sarthak-Developer-Coder/ATS_RESUME_BUILDER.git
+cd ATS_RESUME_BUILDER
 ```
 
 ### 2️⃣ Install Dependencies

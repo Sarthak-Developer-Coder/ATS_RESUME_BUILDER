@@ -295,7 +295,10 @@ Made with ❤️ by **Sarthak Nag**
 📧 sarthakthesde@gmail.com  
 🔗 [LinkedIn](https://linkedin.com/in/sarthak-nag-b91861291)
 
----
+Made with ❤️ by **Prerit Nag**  
+📧 preritnag4@gmail.com  
+🔗 [LinkedIn](https://www.linkedin.com/in/prerit-nag-378b4a284/)
+
 
 ## 📃 License
 
